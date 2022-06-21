@@ -11,30 +11,22 @@
     </head>
 <body>
   <div class="navbar">
-    <div class="container">
-      <a href="#">Property <span>Valuation</span></a>
-      <nav>
-        <ul class="primary-nav">
-          <li class="Current"><a href="#">Home</a></li>
-          <li><a href="#">Login</a></li>
-          <li><a href="#">Values</a></li>
-        </ul>
-        <ul class="profile-nav">
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
+    <div class="container-Nav">
+      <a class="logo" href="#">Property <span>Valuation Project</span></a>
     </div>
   </div>
   <section class="input-form">
     <div class="container">
-      <form id="regForm" action="">
+      <form class="from-1" id="regForm" action="calculations.php">
+        <h2>Ratings</h2>
+        <h3>1 : Poor , 2 : Below Average, 3 : Average, 4 : Good, 5 : Excellent</h3>
 
-        <h1>Register:</h1>
+        <h1>Locality</h1>
         
         <!-- One "tab" for each step in the form: -->
         <div class="tab">Name:
-          <p><input placeholder="First name..." oninput="this.className = ''"></p>
-          <p><input placeholder="Last name..." oninput="this.className = ''"></p>
+          <p><input placeholder="First name..." oninput="this.className = ''" name="First Namee"></p>
+          <p><input placeholder="Last name..." oninput="this.className = ''" name="Last Name"></p>
         </div>
         
         <div class="tab">Contact Info:
@@ -55,8 +47,8 @@
         
         <div style="overflow:auto;">
           <div style="float:right;">
-            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            <button class="previous-btn" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+            <button class="next-btn" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
           </div>
         </div>
         
