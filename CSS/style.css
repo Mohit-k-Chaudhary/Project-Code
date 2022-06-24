@@ -5,11 +5,13 @@
 body{
   margin: 0;
   font-family: comfortaa;
+  background-image: url(/img/house.gif);
  }
 
 .navbar {
   background: #cacaca;
   padding: 1em;
+  margin: 1em;
   box-shadow: #aaaaaa;
   display: flex;
   justify-content: space-between;
@@ -17,7 +19,7 @@ body{
 
 .container-Nav{
   margin: 0;
-  padding: 1em;
+  padding: 0em;
 }
 
 .logo{
@@ -33,60 +35,36 @@ span{
 
 .container {
   display: flex;
-  margin: 2em;
+  margin: 0em;
   padding: 1em;
   justify-content: center;
+  background-image: url(/img/value.gif);
+}
+
+input [type="date"], input{
+  padding: .5em;
+  margin: .8em;
   width: 100%;
+  border-color: var(--primary-color);
+  border-radius: .5em;
 }
 
-/* Style the input fields */
-input {
-  padding: 1em;
+
+
+
+:placeholder-shown{
+  font-family: comfortaa;
+}
+
+.drop-1 {
+  padding: .5em;
+  margin: 1em;
+  width: 32%;
+  border-color: var(--primary-color);
+  border-radius: .5em;
+}
+
+.submit{
+  padding: .7em;
   width: 100%;
-  font-size: bold;
-  font-family: comfortaa;
-  border: 1px solid var(--primary-color);
-}
-
-/* Mark input boxes that gets an error on validation: */
-input.invalid {
-  background-color: #ffdddd;
-}
-
-/* Hide all steps by default: */
-.tab {
-  display: none;
-}
-
-/* Make circles that indicate the steps of the form: */
-.step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: var(--primary-color);
-  border: none;
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
-}
-
-.next-btn, .previous-btn {
-  background-color: var(--primary-color);
-  text-align: center;
-  margin: 0;
-  padding: 1em;
-  font-family: comfortaa;
-  border-radius: 10px;
-  box-shadow: none;
-  border: none;
-}
-
-/* Mark the active step: */
-.step.active {
-  opacity: 1;
-}
-
-/* Mark the steps that are finished and valid: */
-.step.finish {
-  background-color: #434343;
 }
