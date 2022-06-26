@@ -5,8 +5,11 @@
 body{
   margin: 0;
   font-family: comfortaa;
-  background-image: url(/img/house.gif);
- }
+  background-image: url(/img/);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
 
 .navbar {
   background: #cacaca;
@@ -38,7 +41,6 @@ span{
   margin: 0em;
   padding: 1em;
   justify-content: center;
-  background-image: url(/img/value.gif);
 }
 
 input [type="date"], input{
@@ -49,14 +51,11 @@ input [type="date"], input{
   border-radius: .5em;
 }
 
-
-
-
 :placeholder-shown{
   font-family: comfortaa;
 }
 
-.drop-1 {
+.drop-1, .drop-2 {
   padding: .5em;
   margin: 1em;
   width: 32%;
@@ -64,7 +63,12 @@ input [type="date"], input{
   border-radius: .5em;
 }
 
+.radio-btn {
+  display: flex;
+}
+
 .submit{
   padding: .7em;
   width: 100%;
+  justify-content: center;
 }

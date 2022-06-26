@@ -17,7 +17,7 @@
   </div>
   <section class="input-form">
     <div class="container">
-      <form class="from-1" id="regForm" action="calculations.php">
+      <form class="from-1" id="regForm" action="/calculations.php">
         <div class="basic-details">
         <h2>Basic Information</h2>
         <h3>Please Enter Your Basic Information</h3>
@@ -54,10 +54,121 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extent : <input type="text" name="extent" id="extent" placeholder="Any Extension"><br>
         e) Type of the property <br><br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flat/Bungalow/Row House/Duplex : <input type="text" name="type-property" id="type-property" placeholder="Flat/Bungalow/Row House/Duplex"><br>
+        f) Occupant : <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Occupant : <input type="text" name="occupant" id="occupant" placeholder="Eg. Owner or Rented"><br>
+        h) Usage of the Building : <br><br>
+        <select class="drop-2" name="Drop-2" id="drop-2">
+          <option value="Residential">Residential</option>
+          <option value="partly commercial">Partly commercial</option>
+          <option value="fully commercial">Fully commercial (Explain ratio of each type)</option>
+        </select><br>
+        h) Details of the Nearby Landmark : <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="landmark" id="landmark" placeholder="Eg. Ganesh Hotel"><br>
+        i) Development of surrounding area with Lower class/ Middle/ Upper Middle/Posh : <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="area-with" id="area-with" placeholder="Eg. Middle Class"><br>
       </div>
-    <input type="submit" class="submit">    
-      
-    
+      <!-- <h2>2. Building Details</h2>
+      <h3> Please Enter Building Details such as Age, Floor.</h3>
+      a) &nbsp;Marketability of the Property Excellent/Good/Average/Poor : <input type="text" name="Marketability" id="Marketability"><br>
+      b) &nbsp;Age of the Building : <input type="text" name="build-age" id="build-age"><br>
+      c) &nbsp;Future Residual life expected : <input type="text" name="build-future" id="build-future"><br>
+      d) &nbsp;Number of Floors : <input type="text" name="build-floor" id="build-floor"><br> -->
+      <h2>2. Property Ratings</h2>
+      <h3> Please Select Property Rating on scale of 1 to 5.</h3>
+        a) &nbsp;Locality :<br><br>
+        <div class="radio-btn">
+        <label for="loc-rating">Poor</label>
+        <input type="radio" name="loc-rating" value="1">
+        <label for="loc-rating">Below Average</label>
+        <input type="radio" name="loc-rating" value="2">
+        <label for="loc-rating">Average</label>
+        <input type="radio" name="loc-rating" value="3">
+        <label for="loc-rating">Good</label>
+        <input type="radio" name="loc-rating" value="4">
+        <label for="loc-rating">Excellent</label>
+        <input type="radio" name="loc-rating" value="5">
+        </div>
+        b) &nbsp;Condition of approach road :<br><br>
+        <div class="radio-btn">
+        <label for="road-rating">Poor</label>
+        <input type="radio" name="road-rating" value="1">
+        <label for="road-rating">Below Average</label>
+        <input type="radio" name="road-rating" value="2">
+        <label for="road-rating">Average</label>
+        <input type="radio" name="road-rating" value="3">
+        <label for="road-rating">Good</label>
+        <input type="radio" name="road-rating" value="4">
+        <label for="road-rating">Excellent</label>
+        <input type="radio" name="road-rating" value="5">
+      </div>
+      c) &nbsp;Physical status of property :<br><br>
+        <div class="radio-btn">
+        <label for="physical-rating">Poor</label>
+        <input type="radio" name="physical-rating" value="1">
+        <label for="physical-rating">Below Average</label>
+        <input type="radio" name="physical-rating" value="2">
+        <label for="physical-rating">Average</label>
+        <input type="radio" name="physical-rating" value="3">
+        <label for="physical-rating">Good</label>
+        <input type="radio" name="physical-rating" value="4">
+        <label for="physical-rating">Excellent</label>
+        <input type="radio" name="physical-rating" value="5">
+      </div>
+      d) &nbsp;View from property :<br><br>
+      <div class="radio-btn">
+        <label for="view-rating">Poor</label>
+        <input type="radio" name="view-rating" value="1">
+        <label for="view-rating">Below Average</label>
+        <input type="radio" name="view-rating" value="2">
+        <label for="view-rating">Average</label>
+        <input type="radio" name="view-rating" value="3">
+        <label for="view-rating">Good</label>
+        <input type="radio" name="view-rating" value="4">
+        <label for="view-rating">Excellent</label>
+        <input type="radio" name="view-rating" value="5">
+      </div>
+      <h2>3. Amenities Available
+      <h3> Please Select Appropriate Distance or Timing</h3>
+      a) &nbsp;Water Availability :<br><br>
+      <div class="radio-btn">
+        <label for="water-rating">Less Than 5 Hours</label>
+        <input type="radio" name="water-rating" value="1">
+        <label for="water-rating">6-12 Hours</label>
+        <input type="radio" name="water-rating" value="2">
+        <label for="water-rating">12-18 Hours</label>
+        <input type="radio" name="water-rating" value="3">
+        <label for="water-rating">18-23 Hours</label>
+        <input type="radio" name="water-rating" value="4">
+        <label for="water-rating">24 Hours</label>
+        <input type="radio" name="water-rating" value="5">
+      </div><br>
+      b) &nbsp;Electricity Breakdown :<br><br>
+      <div class="radio-btn">
+        <label for="electricity-rating">Less Than 3 Hours</label>
+        <input type="radio" name="electricity-rating" value="1">
+        <label for="electricity-rating">2-3 Hours</label>
+        <input type="radio" name="electricity-rating" value="2">
+        <label for="electricity-rating">1-2 Hours</label>
+        <input type="radio" name="electricity-rating" value="3">
+        <label for="electricity-rating">0-1 Hours</label>
+        <input type="radio" name="electricity-rating" value="4">
+        <label for="electricity-rating">0 Hours</label>
+        <input type="radio" name="electricity-rating" value="5">
+      </div><br>
+      c) &nbsp;Sewerage/ sanitation :<br><br>
+      <div class="radio-btn">
+        <label for="sewerage-rating">Poor</label>
+        <input type="radio" name="sewerage-rating" value="1">
+        <label for="sewerage-rating">Below Average</label>
+        <input type="radio" name="sewerage-rating" value="2">
+        <label for="sewerage-rating">Average</label>
+        <input type="radio" name="sewerage-rating" value="3">
+        <label for="sewerage-rating">Good</label>
+        <input type="radio" name="sewerage-rating" value="4">
+        <label for="sewerage-rating">Excellent</label>
+        <input type="radio" name="sewerage-rating" value="5">
+      </div>
+    <input type="submit" class="submit">
     </form>
     </div>  
   </section>
