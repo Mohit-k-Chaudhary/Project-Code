@@ -1,6 +1,6 @@
 
 <?php
 
-echo "Backend Calculations is Under Constructions: ",$name;
+echo "Backend Calculations is Under Constructions: ";
 
 ?>

@@ -17,7 +17,7 @@
   </div>
   <section class="input-form">
     <div class="container">
-      <form class="from-1" id="regForm" action="/calculations.php">
+      <form class="from-1" id="regForm" action="calculations.php">
         <div class="basic-details">
         <h2>Basic Information</h2>
         <h3>Please Enter Your Basic Information</h3>
@@ -57,7 +57,7 @@
         f) Occupant : <br><br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Occupant : <input type="text" name="occupant" id="occupant" placeholder="Eg. Owner or Rented"><br>
         h) Usage of the Building : <br><br>
-        <select class="drop-2" name="Drop-2" id="drop-2">
+        <select class="drop-2" name="Usage_Build" id="Usage_Build">
           <option value="Residential">Residential</option>
           <option value="partly commercial">Partly commercial</option>
           <option value="fully commercial">Fully commercial (Explain ratio of each type)</option>
@@ -75,177 +75,363 @@
       d) &nbsp;Number of Floors : <input type="text" name="build-floor" id="build-floor"><br> -->
       <h2>2. Property Ratings</h2>
       <h3> Please Select Property Rating on scale of 1 to 5.</h3>
-        a) &nbsp;Locality :<br><br>
-        <div class="radio-btn">
-        <label for="loc-rating">Poor</label>
-        <input type="radio" name="loc-rating" value="1">
-        <label for="loc-rating">Below Average</label>
-        <input type="radio" name="loc-rating" value="2">
-        <label for="loc-rating">Average</label>
-        <input type="radio" name="loc-rating" value="3">
-        <label for="loc-rating">Good</label>
-        <input type="radio" name="loc-rating" value="4">
-        <label for="loc-rating">Excellent</label>
-        <input type="radio" name="loc-rating" value="5">
-        </div>
-        b) &nbsp;Condition of approach road :<br><br>
-        <div class="radio-btn">
-        <label for="road-rating">Poor</label>
-        <input type="radio" name="road-rating" value="1">
-        <label for="road-rating">Below Average</label>
-        <input type="radio" name="road-rating" value="2">
-        <label for="road-rating">Average</label>
-        <input type="radio" name="road-rating" value="3">
-        <label for="road-rating">Good</label>
-        <input type="radio" name="road-rating" value="4">
-        <label for="road-rating">Excellent</label>
-        <input type="radio" name="road-rating" value="5">
-      </div>
-      c) &nbsp;Physical status of property :<br><br>
-        <div class="radio-btn">
-        <label for="physical-rating">Poor</label>
-        <input type="radio" name="physical-rating" value="1">
-        <label for="physical-rating">Below Average</label>
-        <input type="radio" name="physical-rating" value="2">
-        <label for="physical-rating">Average</label>
-        <input type="radio" name="physical-rating" value="3">
-        <label for="physical-rating">Good</label>
-        <input type="radio" name="physical-rating" value="4">
-        <label for="physical-rating">Excellent</label>
-        <input type="radio" name="physical-rating" value="5">
-      </div>
-      d) &nbsp;View from property :<br><br>
-      <div class="radio-btn">
-        <label for="view-rating">Poor</label>
-        <input type="radio" name="view-rating" value="1">
-        <label for="view-rating">Below Average</label>
-        <input type="radio" name="view-rating" value="2">
-        <label for="view-rating">Average</label>
-        <input type="radio" name="view-rating" value="3">
-        <label for="view-rating">Good</label>
-        <input type="radio" name="view-rating" value="4">
-        <label for="view-rating">Excellent</label>
-        <input type="radio" name="view-rating" value="5">
-      </div>
+        a) &nbsp;Locality :
+        <select class="drop-2" name="Locality" id="Locality">
+          <option value="1">Poor</option>
+          <option value="2">Below Average</option>
+          <option value="3">Average</option>
+          <option value="4">Good</option>
+          <option value="5">Excellent</option>
+        </select><br>
+        b) &nbsp;Condition of approach road :
+        <select class="drop-2" name="Road_Condition" id="Road_Condition">
+          <option value="1">Poor</option>
+          <option value="2">Below Average</option>
+          <option value="3">Average</option>
+          <option value="4">Good</option>
+          <option value="5">Excellent</option>
+        </select><br>
+      c) &nbsp;Physical status of property :
+      <select class="drop-2" name="Physical_status" id="Physical_status">
+        <option value="1">Poor</option>
+        <option value="2">Below Average</option>
+        <option value="3">Average</option>
+        <option value="4">Good</option>
+        <option value="5">Excellent</option>
+      </select><br>
+      d) &nbsp;View from property :
+      <select class="drop-2" name="View" id="View">
+        <option value="1">Poor</option>
+        <option value="2">Below Average</option>
+        <option value="3">Average</option>
+        <option value="4">Good</option>
+        <option value="5">Excellent</option>
+      </select><br>
       <h2>3. Amenities Available
       <h3> Please Select Appropriate Distance or Timing</h3>
-      a) &nbsp;Water Availability :<br><br>
-      <div class="radio-btn">
-        <label for="water-rating">Less Than 5 Hours</label>
-        <input type="radio" name="water-rating" value="1">
-        <label for="water-rating">6-12 Hours</label>
-        <input type="radio" name="water-rating" value="2">
-        <label for="water-rating">12-18 Hours</label>
-        <input type="radio" name="water-rating" value="3">
-        <label for="water-rating">18-23 Hours</label>
-        <input type="radio" name="water-rating" value="4">
-        <label for="water-rating">24 Hours</label>
-        <input type="radio" name="water-rating" value="5">
-      </div><br>
-      b) &nbsp;Electricity Breakdown :<br><br>
-      <div class="radio-btn">
-        <label for="electricity-rating">Less Than 3 Hours</label>
-        <input type="radio" name="electricity-rating" value="1">
-        <label for="electricity-rating">2-3 Hours</label>
-        <input type="radio" name="electricity-rating" value="2">
-        <label for="electricity-rating">1-2 Hours</label>
-        <input type="radio" name="electricity-rating" value="3">
-        <label for="electricity-rating">0-1 Hours</label>
-        <input type="radio" name="electricity-rating" value="4">
-        <label for="electricity-rating">0 Hours</label>
-        <input type="radio" name="electricity-rating" value="5">
-      </div><br>
-      c) &nbsp;Sewerage/ sanitation :<br><br>
-      <div class="radio-btn">
-        <label for="sewerage-rating">Poor</label>
-        <input type="radio" name="sewerage-rating" value="1">
-        <label for="sewerage-rating">Below Average</label>
-        <input type="radio" name="sewerage-rating" value="2">
-        <label for="sewerage-rating">Average</label>
-        <input type="radio" name="sewerage-rating" value="3">
-        <label for="sewerage-rating">Good</label>
-        <input type="radio" name="sewerage-rating" value="4">
-        <label for="sewerage-rating">Excellent</label>
-        <input type="radio" name="sewerage-rating" value="5">
-      </div>
-      d) &nbsp;Exterior :<br><br>
-      <div class="radio-btn">
-        <label for="exterior-rating">Poor</label>
-        <input type="radio" name="exterior-rating" value="1">
-        <label for="exterior-rating">Below Average</label>
-        <input type="radio" name="exterior-rating" value="2">
-        <label for="exterior-rating">Average</label>
-        <input type="radio" name="exterior-rating" value="3">
-        <label for="exterior-rating">Good</label>
-        <input type="radio" name="exterior-rating" value="4">
-        <label for="exterior-rating">Excellent</label>
-        <input type="radio" name="exterior-rating" value="5">
-      </div>
-      e) &nbsp;Interior :<br><br>
-      <div class="radio-btn">
-        <label for="interior-rating">Poor</label>
-        <input type="radio" name="interior-rating" value="1">
-        <label for="interior-rating">Below Average</label>
-        <input type="radio" name="interior-rating" value="2">
-        <label for="interior-rating">Average</label>
-        <input type="radio" name="interior-rating" value="3">
-        <label for="interior-rating">Good</label>
-        <input type="radio" name="interior-rating" value="4">
-        <label for="interior-rating">Excellent</label>
-        <input type="radio" name="interior-rating" value="5">
-      </div>
-      f) &nbsp;Plumbing :<br><br>
-      <div class="radio-btn">
-        <label for="plumbing-rating">Poor</label>
-        <input type="radio" name="plumbing-rating" value="1">
-        <label for="plumbing-rating">Below Average</label>
-        <input type="radio" name="plumbing-rating" value="2">
-        <label for="plumbing-rating">Average</label>
-        <input type="radio" name="plumbing-rating" value="3">
-        <label for="plumbing-rating">Good</label>
-        <input type="radio" name="plumbing-rating" value="4">
-        <label for="plumbing-rating">Excellent</label>
-        <input type="radio" name="plumbing-rating" value="5">
-      </div>
-      g) &nbsp;Maintenance level :<br><br>
-      <div class="radio-btn">
-        <label for="Maintenance-rating">Poor</label>
-        <input type="radio" name="Maintenance-rating" value="1">
-        <label for="Maintenance-rating">Below Average</label>
-        <input type="radio" name="Maintenance-rating" value="2">
-        <label for="Maintenance-rating">Average</label>
-        <input type="radio" name="Maintenance-rating" value="3">
-        <label for="Maintenance-rating">Good</label>
-        <input type="radio" name="Maintenance-rating" value="4">
-        <label for="Maintenance-rating">Excellent</label>
-        <input type="radio" name="Maintenance-rating" value="5">
-      </div>
-      h) &nbsp;Maintenance level :<br><br>
-      <div class="radio-btn">
-        <label for="Maintenance-rating">Poor</label>
-        <input type="radio" name="Maintenance-rating" value="1">
-        <label for="Maintenance-rating">Below Average</label>
-        <input type="radio" name="Maintenance-rating" value="2">
-        <label for="Maintenance-rating">Average</label>
-        <input type="radio" name="Maintenance-rating" value="3">
-        <label for="Maintenance-rating">Good</label>
-        <input type="radio" name="Maintenance-rating" value="4">
-        <label for="Maintenance-rating">Excellent</label>
-        <input type="radio" name="Maintenance-rating" value="5">
-      </div>
-      i) &nbsp;Maintenance level :<br><br>
-      <div class="radio-btn">
-        <label for="Maintenance-rating">Poor</label>
-        <input type="radio" name="Maintenance-rating" value="1">
-        <label for="Maintenance-rating">Below Average</label>
-        <input type="radio" name="Maintenance-rating" value="2">
-        <label for="Maintenance-rating">Average</label>
-        <input type="radio" name="Maintenance-rating" value="3">
-        <label for="Maintenance-rating">Good</label>
-        <input type="radio" name="Maintenance-rating" value="4">
-        <label for="Maintenance-rating">Excellent</label>
-        <input type="radio" name="Maintenance-rating" value="5">
-      </div>
+      a) &nbsp;Water Availability :
+      <select class="drop-2" name="water_availability" id="water_availability">
+        <option value="1">Less Than 5 Hours</option>
+        <option value="2">6-12 Hours</option>
+        <option value="3">12-18 Hours</option>
+        <option value="4">18-23 Hours</option>
+        <option value="5">24 Hours</option>
+      </select><br>
+      b) &nbsp;Electricity Breakdown :
+      <select class="drop-2" name="water_availability" id="water_availability">
+        <option value="1">Less Than 3 Hours</option>
+        <option value="2">2-3 Hours</option>
+        <option value="3">1-2 Hours</option>
+        <option value="4">0-1 Hours</option>
+        <option value="5">0 Hours</option>
+      </select><br>
+      c) &nbsp;Sewerage/sanitation :
+      <select class="drop-2" name="Sewerage" id="Sewerage">
+        <option value="1">Poor</option>
+        <option value="2">Below Average</option>
+        <option value="3">Average</option>
+        <option value="4">Good</option>
+        <option value="5">Excellent</option>
+      </select><br>
+      d) &nbsp;Exterior :
+      <select class="drop-2" name="Exterior" id="Exterior">
+        <option value="1">Poor</option>
+        <option value="2">Below Average</option>
+        <option value="3">Average</option>
+        <option value="4">Good</option>
+        <option value="5">Excellent</option>
+      </select><br>
+      e) &nbsp;Interior :
+      <select class="drop-2" name="Interior" id="Interior">
+        <option value="1">Poor</option>
+        <option value="2">Below Average</option>
+        <option value="3">Average</option>
+        <option value="4">Good</option>
+        <option value="5">Excellent</option>
+      </select><br>
+      f) &nbsp;Plumbing :
+      <select class="drop-2" name="Plumbing" id="Plumbing">
+        <option value="1">Poor</option>
+        <option value="2">Below Average</option>
+        <option value="3">Average</option>
+        <option value="4">Good</option>
+        <option value="5">Excellent</option>
+      </select><br>
+      g) &nbsp;Maintenance level :
+      <select class="drop-2" name="Maintenance" id="Maintenance">
+        <option value="1">Poor</option>
+        <option value="2">Below Average</option>
+        <option value="3">Average</option>
+        <option value="4">Good</option>
+        <option value="5">Excellent</option>
+      </select><br>
+      h) &nbsp;Development of surrounding area :
+      <select class="drop-2" name="Development" id="Development">
+        <option value="1">Poor</option>
+        <option value="2">Below Average</option>
+        <option value="3">Average</option>
+        <option value="4">Good</option>
+        <option value="5">Excellent</option>
+      </select><br>
+      i) &nbsp;Architectural and aesthetic quality :
+      <select class="drop-2" name="Architectural" id="Architectural">
+        <option value="1">Poor</option>
+        <option value="2">Below Average</option>
+        <option value="3">Average</option>
+        <option value="4">Good</option>
+        <option value="5">Excellent</option>
+      </select><br>
+      j) &nbsp;Flooring :
+      <select class="drop-2" name="Flooring" id="Flooring">
+        <option value="1">Rough Shahabad</option>
+        <option value="2">Mozaic</option>
+        <option value="3">Kota</option>
+        <option value="4">Marbonite</option>
+        <option value="5">Marble</option>
+      </select><br>
+      Others(specify) : <input type="text" name="Flooring" id="Flooring-Others" placeholder="Others(specify)"><br>
+      k) &nbsp;Electrical fitting :
+      <select class="drop-2" name="Electrical" id="Electrical">
+        <option value="1">Simple fitting</option>
+        <option value="2">Pipe fitting</option>
+        <option value="3">Patti fitting</option>
+        <option value="4">Partly concealed fitting</option>
+        <option value="5">Consealed fitting</option>
+      </select><br>
+      l) &nbsp;Kitchen Platform :
+      <select class="drop-2" name="Kitchen" id="Kitchen">
+        <option value="1">Kitchen katta not available</option>
+        <option value="2">Kitchen katta not having kitchen trolley</option>
+        <option value="3">Modular Kitchen not having proper natural ventilation</option>
+        <option value="4">Modular Kitchen with well ventilation</option>
+        <option value="5">Modular Kitchen with exaust fan/chimney</option>
+      </select><br>
+      m) &nbsp;Parking :
+      <select class="drop-2" name="Parking" id="Parking">
+        <option value="1">Sufficient space not available</option>
+        <option value="2">Open Parking</option>
+        <option value="3">Basement Parking</option>
+        <option value="4">Stilt Parking</option>
+        <option value="5">Mechanized Parking</option>
+      </select><br>
+      n) &nbsp;Painting :
+      <select class="drop-2" name="Painting" id="Painting">
+        <option value="1">Poor</option>
+        <option value="2">Below Average</option>
+        <option value="3">Average</option>
+        <option value="4">Good</option>
+        <option value="5">Excellent</option>
+      </select><br>
+      <h2>4. Amenities At Distance
+        <h3> Please Select Appropriate Distance</h3>
+        a) School/College :
+        <select class="drop-2" name="School" id="School">
+          <option value="1">More than 1Km</option>
+          <option value="2">500m - 1Km</option>
+          <option value="3">300m - 500m</option>
+          <option value="4">100m - 300m</option>
+          <option value="5">Less than 100m</option>
+        </select><br>
+        b) Hospital :
+        <select class="drop-2" name="Hospital" id="Hospital">
+          <option value="1">More than 1Km</option>
+          <option value="2">500m - 1Km</option>
+          <option value="3">300m - 500m</option>
+          <option value="4">100m - 300m</option>
+          <option value="5">Less than 100m</option>
+        </select><br>
+        c) Market :
+        <select class="drop-2" name="Market" id="Market">
+          <option value="1">More than 1Km</option>
+          <option value="2">500m - 1Km</option>
+          <option value="3">300m - 500m</option>
+          <option value="4">100m - 300m</option>
+          <option value="5">Less than 100m</option>
+        </select><br>
+        d) Bank :
+        <select class="drop-2" name="Bank" id="Bank">
+          <option value="1">More than 1Km</option>
+          <option value="2">500m - 1Km</option>
+          <option value="3">300m - 500m</option>
+          <option value="4">100m - 300m</option>
+          <option value="5">Less than 100m</option>
+        </select><br>
+        e) Playground :
+        <select class="drop-2" name="Playground" id="Playground">
+          <option value="1">More than 1Km</option>
+          <option value="2">500m - 1Km</option>
+          <option value="3">300m - 500m</option>
+          <option value="4">100m - 300m</option>
+          <option value="5">Less than 100m</option>
+        </select><br>
+        f) Cinema Theatre :
+        <select class="drop-2" name="Theatre" id="Theatre">
+          <option value="1">More than 1Km</option>
+          <option value="2">500m - 1Km</option>
+          <option value="3">300m - 500m</option>
+          <option value="4">100m - 300m</option>
+          <option value="5">Less than 100m</option>
+        </select><br>
+        g) Sports complex :
+        <select class="drop-2" name="complex" id="complex">
+          <option value="1">More than 1Km</option>
+          <option value="2">500m - 1Km</option>
+          <option value="3">300m - 500m</option>
+          <option value="4">100m - 300m</option>
+          <option value="5">Less than 100m</option>
+        </select><br>
+        g) Rikshaw stand :
+        <select class="drop-2" name="Rikshaw" id="Rikshaw">
+          <option value="1">More than 1Km</option>
+          <option value="2">500m - 1Km</option>
+          <option value="3">300m - 500m</option>
+          <option value="4">100m - 300m</option>
+          <option value="5">Less than 100m</option>
+        </select><br>
+        h) Parks/Gardens :
+        <select class="drop-2" name="Gardens" id="Gardens">
+          <option value="1">More than 1Km</option>
+          <option value="2">500m - 1Km</option>
+          <option value="3">300m - 500m</option>
+          <option value="4">100m - 300m</option>
+          <option value="5">Less than 100m</option>
+        </select><br>
+        <h2>5. Transpotation Facilities At Distance
+          <h3> Please Select Appropriate Distance</h3>
+        a) Bus stand :
+          <select class="drop-2" name="Bus" id="Bus">
+            <option value="1">More than 1Km</option>
+            <option value="2">500m - 1Km</option>
+            <option value="3">300m - 500m</option>
+            <option value="4">100m - 300m</option>
+            <option value="5">Less than 100m</option>
+          </select><br>
+        b) Railway stand :
+          <select class="drop-2" name="Railway" id="Railway">
+            <option value="1">More than 1Km</option>
+            <option value="2">500m - 1Km</option>
+            <option value="3">300m - 500m</option>
+            <option value="4">100m - 300m</option>
+            <option value="5">Less than 100m</option>
+          </select><br>
+        c) Airport stand :
+          <select class="drop-2" name="Airport" id="Airport">
+            <option value="1">More than 1Km</option>
+            <option value="2">500m - 1Km</option>
+            <option value="3">300m - 500m</option>
+            <option value="4">100m - 300m</option>
+            <option value="5">Less than 100m</option>
+          </select><br>
+        d) Highway stand :
+          <select class="drop-2" name="Highway" id="Highway">
+            <option value="1">More than 1Km</option>
+            <option value="2">500m - 1Km</option>
+            <option value="3">300m - 500m</option>
+            <option value="4">100m - 300m</option>
+            <option value="5">Less than 100m</option>
+          </select><br>
+        e) Govt Offices :
+          <select class="drop-2" name="Govt" id="Govt">
+            <option value="1">More than 2Km</option>
+            <option value="2">1.5km - 2Km</option>
+            <option value="3">1km - 1.5km</option>
+            <option value="4">500m - 1Km</option>
+            <option value="5">Less than 500m</option>
+          </select><br>
+        <h2>6. Others
+        <h3> Please Select Appropriate Option</h3>
+        a) Width of approach road :
+          <select class="drop-2" name="road-width" id="road-width">
+            <option value="1">Below 3.75 m</option>
+            <option value="2">3.75m</option>
+            <option value="3">7 m </option>
+            <option value="4">7.5 m</option>
+            <option value="5">More than 7.5 m</option>
+          </select><br>
+        b) Lift (If yes) :
+          <select class="drop-2" name="Lift-Yes" id="Lift-Yes">
+            <option value="1">GF - 4</option>
+            <option value="2">5-10</option>
+            <option value="3">11-20</option>
+            <option value="4">21-30</option>
+            <option value="5">More than 31</option>
+            <option value="0">No Lift</option>
+          </select><br>
+        c) Lift (If No) :
+          <select class="drop-2" name="Lift-No" id="Lift-No">
+            <option value="1">5</option>
+            <option value="2">4</option>
+            <option value="3">3 </option>
+            <option value="4">2</option>
+            <option value="5">Gf /stilt floor</option>
+            <option value="0">No</option>
+          </select><br>
+        d) Industrial  connectivity :
+        <select class="drop-2" name="Industrial" id="Industrial">
+          <option value="1">More than 2Km</option>
+          <option value="2">1.5km - 2Km</option>
+          <option value="3">1km - 1.5km</option>
+          <option value="4">500m - 1Km</option>
+          <option value="5">Less than 500m</option>
+        </select><br>
+        e) Classification of the area :
+        <select class="drop-2" name="Classification" id="Classification">
+          <option value="1">Rural</option>
+          <option value="2">Mixed (Urban + Rural)</option>
+          <option value="3">Semi urban</option>
+          <option value="4">Urban</option>
+          <option value="5">Metro</option>
+        </select><br>
+        f) Size and Shape of the Land :
+        <select class="drop-2" name="Size-Shape" id="Size-Shape">
+          <option value="1">Irregular shape</option>
+          <option value="2">L=2.6B to 3B</option>
+          <option value="3">L=B</option>
+          <option value="4">L=2.1B to 2.5B</option>
+          <option value="5">L= 1.1 B to 2B</option>
+        </select><br>
+        g) Type of construction :
+        <select class="drop-2" name="construction" id="construction">
+          <option value="1">Vacant plot</option>
+          <option value="2">Old stone  masonary</option>
+          <option value="3">Load bearing</option>
+          <option value="4">Composite</option>
+          <option value="5">RCC Framed structue</option>
+        </select><br>
+        h) Planning (Ease of movement) :
+        <select class="drop-2" name="Planning" id="Planning">
+          <option value="1">Poor</option>
+          <option value="2">Below Average</option>
+          <option value="3">Average</option>
+          <option value="4">Good</option>
+          <option value="5">Better Planning</option>
+        </select><br>
+        i) Any negatives (Please Specify)
+        <select class="drop-2" name="Planning" id="Planning">
+          <option value="1">Poor</option>
+          <option value="2">Below Average</option>
+          <option value="3">Average</option>
+          <option value="4">Good</option>
+          <option value="5">Excellent</option>
+        </select><br>
+      specify : <input type="text" name="negatives" id="negatives" placeholder="Any negatives (Please Specify)"><br>
+        j) Any favorable consideration (Please specify) 
+        <select class="drop-2" name="Planning" id="Planning">
+          <option value="1">Poor</option>
+          <option value="2">Below Average</option>
+          <option value="3">Average</option>
+          <option value="4">Good</option>
+          <option value="5">Excellent</option>
+        </select><br>
+      specify : <input type="text" name="negatives" id="negatives" placeholder="Any favorable consideration (Please specify)"><br>
+        k) Type of property 
+        <select class="drop-2" name="Planning" id="Planning">
+          <option value="1">Bungalow</option>
+          <option value="2">Flat</option>
+          <option value="3">Row house</option>
+          <option value="4">Duplex</option>
+          <option value="5">Twin bunglow</option>
+        </select><br>
     <input type="submit" class="submit">
     </form>
     </div>  
