@@ -96,8 +96,30 @@ $area = (int)$_POST["area"];
 
 $valuation = (($ready_recknor_rate * $area) * $Mul_Factor) * $age_factor;
 
-echo $valuation."&#x20b9";
+/* setlocale(LC_MONETARY, 'en_IN');
+$valuation = moneyFormatIndia($valuation);
 
+function moneyFormatIndia($num) {
+    $explrestunits = "" ;
+    if(strlen($num)>3) {
+        $lastthree = substr($num, strlen($num)-3, strlen($num));
+        $restunits = substr($num, 0, strlen($num)-3); // extracts the last three digits
+        $restunits = (strlen($restunits)%2 == 1)?"0".$restunits:$restunits; // explodes the remaining digits in 2's formats, adds a zero in the beginning to maintain the 2's grouping.
+        $expunit = str_split($restunits, 2);
+        for($i=0; $i<sizeof($expunit); $i++) {
+            // creates each of the 2's group and adds a comma to the end
+            if($i==0) {
+                $explrestunits .= (int)$expunit[$i].","; // if is first value , convert into integer
+            } else {
+                $explrestunits .= $expunit[$i].",";
+            }
+        }
+        $thecash = $explrestunits.$lastthree;
+    } else {
+        $thecash = $num;
+    }
+    return $thecash; // writes the final format where $currency is the currency symbol.
+} */
 
 ?>
 
@@ -117,7 +139,7 @@ echo $valuation."&#x20b9";
             <h2></h2>
             <br><br><br><br><br>
             <br><br><br><br><br><br><br><br><br><br>
-            <br><br><br><br><br>
+            <br><br><br>
             </th>
         </tr>    
     </table>
@@ -311,7 +333,7 @@ echo $valuation."&#x20b9";
         <td style="width:5%"><p>a)</p></td>
         <td style="width:45%">Ready-Reckoner Rate :</td>
         <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["Ready-Reckoner"]."&#x20b9"; ?></td>        
+        <td style="width:45%"><?php echo $_POST["Ready-Reckoner"]." &#x20b9"; ?></td>        
     </tr>
     <tr>
         <td style="width:5%"><p>b)</p></td>
@@ -320,45 +342,173 @@ echo $valuation."&#x20b9";
         <td style="width:45%"><?php echo $_POST["area"]." sqft"; ?></td>        
     </tr>
     <tr>
-    <tr>
-        <td style="width:5%"><p>c)</p></td>
-        <td style="width:45%">Area :</td>
-        <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["area"]." sqft"; ?></td>        
-    </tr>
-    <tr>
-
-        <td colspan="4"> <h3>10. CERTIFICATE </h3></td>
-    </tr>
-    <tr>
-        <td colspan="4"><p>Note 1:- The extraordinary situation is created in the world due to pandemic of Covid-19 Virus. The
-whole world is locked down since Mar.2020. Due to this situation the world economy is heavily
-affected. The Impact of 2nd wave of Covid-19 worldwide again disturbed the world economy as well as
-Indian Economy. Due to change in the priorities & uncertainty of the situation the real estate market is
-also heavily affected. Considering the current situation, we are adopting the reasonable & fair market
-rates after analyzing the various factors.</p></td>
-    </tr>
-    <tr>
-        <td colspan="4"><p>Note 2 :- Normally the Ready Reckoner value is adopted for the Stamp Duty Purpose. This value is not
-calculated by taking in to consideration the Market value and other technical and locational aspects.
-Also Ready reckoner rates are not location based .The rates are based on S.No.s which may be same for
-the main road or internal road. The market value is based on the Location of the property ,Demand
-supply ratio, specifications of the property ,Market economy & such other factors. Hence in my opinion
-the rate considered for this property is fair & reasonable..</p></td>
-    </tr>
-    <tr>
-        <td colspan="4">I declare that I am not associated with the builder or with any of his associate companies or with the
-borrower directly or indirectly in the past or in the present and this report has been prepared by me
-with highest professional integrity.
-I further declare that my assistant personally inspected the site and building onI further declare that all
-the above particulars and information given in this report are true to the best of my knowledge and
-belief.</td>
-    </tr>
-
 </table>
+<br><br><br>
+<table>
+<tr>
+        <td colspan="4"> <h3>3. Valuation Table </h3></td>
+    </tr>
+    <tr>
+        <td style="width:25%"><p>Asset Type</p></td>
+        <td style="width:25%">Build-Up Area in sqft</td>
+        <td style="width:25%"><p>Valuation Rate Rs. / sq. ft.</p></td>
+        <td style="width:25%"><p>Fair Market Value, Rs.</p></td>        
+    </tr>
+    <tr>
+        <td style="width:25%"><?php echo $_POST["Property-type"]; ?></td>
+        <td style="width:25%"><?php echo $_POST["area"]." sqft"; ?></td>
+        <td style="width:25%"><?php echo $_POST["Ready-Reckoner"]."&#x20b9"; ?></td>
+        <td style="width:25%"><?php echo $valuation." &#x20b9"; ?></td>        
+    </tr>
+    <tr>
+</table>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<table>
+    <tr>
+    <td colspan="4"> <h3>Certificate of Valuation</h3></td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            This is to certify that,<br><br><br><br><br>
+            The Fair Market Value of the Immovable Asset of <?php echo $owner_name ?>, located at <?php echo $_POST["Address"]; ?>, is <?php echo $valuation." &#x20b9"; ?> as per our appraisal & Analysis.
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+        This should be considered as true & Fair.
+        </td>
+    </tr>
+</table>
+<br><br><br>
+<table>
+    <tr>
+    <td colspan="4"> <h2>Annexure I</h3></td>
+    </tr>
+    <tr>
+    <td colspan="4"> <h3>Technical Details & Specifications of the property</h3></td>
+    </tr>
+    <tr>
+        <td style="width:5%"><p>1</p></td>
+        <td style="width:45%">No of floors and height of each floor</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-1"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>2</p></td>
+        <td style="width:45%">Plinth area-floor-wise (As per Is:3861-1966)</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-2"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>3</p></td>
+        <td style="width:45%">Year of construction</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-3"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>4</p></td>
+        <td style="width:45%">Estimated future life</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-4"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>5</p></td>
+        <td style="width:45%">Type of construction - Load bearing walls/R.C.C. frame/steel frame</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-5"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>6</p></td>
+        <td style="width:45%">Type of Foundation</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-6"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>7</p></td>
+        <td style="width:45%">WALLS a)External walls</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-7"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>8</p></td>
+        <td style="width:45%">b) Partitions</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-8"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>9</p></td>
+        <td style="width:45%">Door and windows (floor wise)</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-9"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>10</p></td>
+        <td style="width:45%">Flooring (floor wise)</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-10"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>11</p></td>
+        <td style="width:45%">Finishing (floor wise)</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-11"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>12</p></td>
+        <td style="width:45%">Roofing and terracing</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-12"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>13</p></td>
+        <td style="width:45%">a) Internal wiring – surface or condult</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-13"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>14</p></td>
+        <td style="width:45%">b) Class of fitting superior / ordinary / poor</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-14"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>15</p></td>
+        <td style="width:45%">c) Sanitary installations</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-15"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>16</p></td>
+        <td style="width:45%">Compound installations</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-16"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>17</p></td>
+        <td style="width:45%">No. of lifts and capacity</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-17"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>18</p></td>
+        <td style="width:45%">Water facility</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-18"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>19</p></td>
+        <td style="width:45%">Other amenities</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-19"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>20</p></td>
+        <td style="width:45%">Roads & paving within the Compound</td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["tech-20"]; ?></td>        
+    </tr>
+</table>
+<br><br><br><br><br><br><br>
 <a href="javascript:window.print();">Print Valuation</a>
 </div>
-<!-- <button onclick="javascript:demoFromHTML()">Print to PDF</button> -->
-
-
-<!-- Valuation Calculations -->
