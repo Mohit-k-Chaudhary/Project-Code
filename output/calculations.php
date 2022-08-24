@@ -48,32 +48,57 @@ img{
 </body>
 </html>
 
-<!-- Switch Cases -->
+<!-- Calculations Cases -->
 
 <?php 
 $owner_name = $_POST["own-name"];
-$locality_1 = $_POST["Locality"];
-$locality;
 
-switch ($locality_1) {
-    case "Poor":
-        $locality = 1;
-      break;
-    case "Below Average":
-        $locality = 2;      
-      break;
-    case "Average":
-        $locality = 3;
-      break;
-    case "Good":
-        $locality = 4;
-      break;
-    case "Excellent":
-        $locality = 5;
-      break;
-    default:
-      echo "No Option is Selected";
+$Property_Rating = $_POST["Locality"] + $_POST["Road_Condition"] + $_POST["Physical_status"] + $_POST["View"];
+$Amenities_Rating = $_POST["water_availability"] + $_POST["electricity_availability"] + $_POST["Sewerage"] + $_POST["Exterior"] + $_POST["Interior"] + $_POST["Plumbing"] + $_POST["Maintenance"] + $_POST["Development"] + $_POST["Architectural"] + $_POST["Flooring"] + $_POST["Electrical"] + $_POST["Kitchen"] + $_POST["Parking"] + $_POST["Painting"];
+$Amenities_Distance_Rating = $_POST["School"] + $_POST["Hospital"] + $_POST["Market"] + $_POST["Bank"] + $_POST["Playground"] + $_POST["Theatre"] + $_POST["complex"] + $_POST["Rikshaw"] + $_POST["Gardens"];
+$Transpotation_Distance_Rating = $_POST["Bus"] + $_POST["Railway"] + $_POST["Airport"] + $_POST["Highway"] + $_POST["Govt"];
+$Others_Ratings = $_POST["road-width"] + $_POST["Lift-Yes"] + $_POST["Lift-No"] + $_POST["Industrial"] + $_POST["Classification"] + $_POST["Size-Shape"] + $_POST["construction"] + $_POST["Planning"] + $_POST["Neg-1"] + $_POST["plus-1"]; 
+$Facilities_1 = $_POST["Green-Tech"] + $_POST["Solar-Tech"] + $_POST["Gas-Pipeline"] + $_POST["rainwate"] + $_POST["Bore-well"];
+$Facilities_2 = $_POST["firefighting"] + $_POST["Securty"] + $_POST["Club-house"] + $_POST["pool"] + $_POST["Jogging"];
+
+$Sum = $Property_Rating + $Amenities_Rating + $Amenities_Distance_Rating+$Transpotation_Distance_Rating+$Others_Ratings+$Facilities_1+$Facilities_2;
+$Total_ratings = 44;
+
+$Average = $Sum/$Total_ratings;
+$Mul_Factor;
+
+if ($Average <= 0.5) {
+    $Mul_Factor = 1;
+  } elseif($Average <= 1) {
+    $Mul_Factor = 1.05;
+  } elseif($Average <= 1.5) {
+    $Mul_Factor = 1.1;
+  } elseif($Average <= 2) {
+    $Mul_Factor = 1.15;
+  } elseif($Average <= 2.5) {
+    $Mul_Factor = 1.2;
+  } elseif($Average <= 3) {
+    $Mul_Factor = 1.25;
+  } elseif($Average <= 3.5) {
+    $Mul_Factor = 1.3;
+  } elseif($Average <= 4) {
+    $Mul_Factor = 1.35;
+  } elseif($Average <= 4.5) {
+    $Mul_Factor = 1.4;
+  } elseif($Average <= 5) {
+    $Mul_Factor = 1.45;
+  } else {
+    echo "Error in Calculations";
   }
+$age_factor = $_POST["age_of_Building"];
+$ready_recknor_rate = (int)$_POST["Ready-Reckoner"];
+$area = (int)$_POST["area"];
+
+$valuation = (($ready_recknor_rate * $area) * $Mul_Factor) * $age_factor;
+
+echo $valuation."&#x20b9";
+
+
 ?>
 
 <!-- Starting Page -->
@@ -280,88 +305,7 @@ switch ($locality_1) {
         <td style="width:45%"><?php echo $_POST["area-with"]; ?></td>        
     </tr>
     <tr>
-        <td colspan="4"> <h3>2. Others </h3>
-        </td>
-    </tr>
-    <tr>
-        <td style="width:5%"><p>a)</p></td>
-        <td style="width:45%">Width of approach road : </td>
-        <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["road-width"]; ?></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p>b)</p></td>
-        <td style="width:45%"> Lift (If yes) : </td>
-        <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["Lift-Yes"]; ?></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p>c)</p></td>
-        <td style="width:45%"> Lift (If No) : </td>
-        <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["Lift-No"]; ?></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p>d)</p></td>
-        <td style="width:45%"> Industrial  connectivity : </td>
-        <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["Industrial"]; ?></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p>e)</p></td>
-        <td style="width:45%"> Classification of the area : </td>
-        <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["Classification"]; ?></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p>f)</p></td>
-        <td style="width:45%"> Size and Shape of the Land : </td>
-        <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["Size-Shape"]; ?></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p>g)</p></td>
-        <td style="width:45%"> Type of construction : </td>
-        <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["construction"]; ?></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p>h)</p></td>
-        <td style="width:45%"> Planning (Ease of movement) :</td>
-        <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["Planning"]; ?></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p>i)</p></td>
-        <td style="width:45%"> ny negatives (Please Specify) :</td>
-        <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["Neg-1"]; ?></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p></p></td>
-        <td style="width:45%"> Please Specify</td>
-        <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["negatives"]; ?></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p>j)</p></td>
-        <td style="width:45%"> Any favorable consideration (Please specify) :</td>
-        <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["plus-1"]; ?></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p></p></td>
-        <td style="width:45%"> Please Specify</td>
-        <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["positives"]; ?></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p>k)</p></td>
-        <td style="width:45%"> Type of property  :</td>
-        <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["Property-type"]; ?></td>        
-    </tr>
-    <td colspan="4"> <h3>9. Valuation Details </h3></td>
+        <td colspan="4"> <h3>2. Valuation Details </h3></td>
     </tr>
     <tr>
         <td style="width:5%"><p>a)</p></td>
