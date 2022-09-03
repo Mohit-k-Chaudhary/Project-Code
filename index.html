@@ -34,45 +34,46 @@
         <div class="property-details">
         <h2>1. Property Details</h2>
         <h3> Please Enter Property Details such as Name of owner Location etc.</h3> 
-        a) &nbsp;Name of the Applicant/Intended Buyer : <input type="text" name="pr-name" id="pr-name"><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name of the Owner : <input type="text" name="own-name" id="own-name"><br>
-        b) Document perused <br><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i) Index-II No : <input type="text" name="In-No" id="In-No" placeholder="Eg. Reg. Transfer Deed No.2885/1998 Dt.09/09/1998."><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii) Plan/ Commencement Certificate No.: <input type="text" name="Com-Cer-no" id="Com-Cer-no" placeholder="Eg. PMC Sanction plan vide No.CC/7039 Dt.13/05/1982"><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii) Completion Certificate : <input type="text" name="Com-Cer" id="Com-Cer" placeholder="Eg. PMC Completion Certificate no. 3621 dt. 16/10/1984."><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv) Agreement : <input type="text" name="aggrement" id="aggrement" placeholder="Eg. MOU dt.31/01/2022"><br>
-        c) Location of the Property <br><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address of the Property : <input type="text" name="Address" id="Address" placeholder="Property Address"><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Plot No. /S.F. No./T.S.No. /R.S.No. : <input type="text" name="plot-no" id="plot-no" placeholder="Plot No. etc"><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Village/Block No./Taluk/Ward No. : <input type="text" name="Taluka" id="Taluka" placeholder="Taluka"><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;District/Corporation/Municipality : <input type="text" name="District" id="District" placeholder="District"><br>
-        d) Boundaries and Dimensions <br><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;North/Front : <input type="text" name="North/Front" id="North/Front" placeholder="North/Front"><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;South/Rear : <input type="text" name="South/Rear" id="South/Rear" placeholder="South/Rear"><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;East/Left (side 1) : <input type="text" name="side-1" id="side-1" placeholder="East/Left (side 1)"><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;West/Right (side2) : <input type="text" name="side-2" id="side-2" placeholder="West/Right (side 2)"><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extent : <input type="text" name="extent" id="extent" placeholder="Any Extension"><br>
-        e) Type of the property <br><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flat/Bungalow/Row House/Duplex : <input type="text" name="type-property" id="type-property" placeholder="Flat/Bungalow/Row House/Duplex"><br>
-        f) Occupant <br><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Occupant : <input type="text" name="occupant" id="occupant" placeholder="Eg. Owner or Rented"><br>
-        g) Usage of the Building : <br><br>
-        <select class="drop-2" name="Usage_Build" id="Usage_Build">
-          <option value="Residential">Residential</option>
-          <option value="partly commercial">Partly commercial</option>
-          <option value="fully commercial">Fully commercial (Explain ratio of each type)</option>
-        </select><br>
-        h) Details of the Nearby Landmark : <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="landmark" id="landmark" placeholder="Eg. Ganesh Hotel"><br>
-        i) Development of surrounding area with Lower class/ Middle/ Upper Middle/Posh : <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="area-with" id="area-with" placeholder="Eg. Middle Class"><br>
-      </div>
-      <!-- <h2>2. Building Details</h2>
-      <h3> Please Enter Building Details such as Age, Floor.</h3>
-      a) &nbsp;Marketability of the Property Excellent/Good/Average/Poor : <input type="text" name="Marketability" id="Marketability"><br>
-      b) &nbsp;Age of the Building : <input type="text" name="build-age" id="build-age"><br>
-      c) &nbsp;Future Residual life expected : <input type="text" name="build-future" id="build-future"><br>
-      d) &nbsp;Number of Floors : <input type="text" name="build-floor" id="build-floor"><br> -->
+        <h2>I. General Details</h2>
+        1) &nbsp;If the property is under joint ownership/ co ownership, share of each owner. Is the share undivided. : <input type="text" name="ownership" id="ownership" placeholder="Joint Ownership"><br>
+        2) &nbsp;Name of the Owner : <input type="text" name="own-name" id="own-name"><br>
+        3) &nbsp;Brief description of the property<input type="text" name="Brief_Prop" id="Brief_Prop" placeholder="Please Enter Brief Address of Property"><br>
+        5) &nbsp;Location, Street, ward no. <input type="text" name="Location_Prop" id="Location_Prop" placeholder="Please Enter Location of Property"><br>
+        6) &nbsp;Survey /Plot no of the land <input type="text" name="Survey_Prop" id="Survey_Prop" placeholder="Please Enter Survey of Property"><br>
+        7) &nbsp;Is the property situated in residential / commercial / Industrial/ shopping premise? <input type="text" name="Situated_prop" id="Situated_prop" placeholder="Please Enter Zone of Property"><br>
+        8) &nbsp;Classification of the locality-high class/ middle class/ poor class <input type="text" name="Locality_Prop" id="Locality_Prop" placeholder="Please Enter a Locality of Property"><br>
+        9) &nbsp;Proximity to civic amenities like schools, offices, hospital, market, cinema etc. <input type="text" name="Proximity_Civil_Prop" id="Proximity_Civil_Prop" placeholder="Please Enter a Proximity of Civil Services from the Property"><br>
+        10) &nbsp;Means and proximity to surface communication by which the locality is served. <input type="text" name="Proximity_Communication_Prop" id="Proximity_Communication_Prop" placeholder="Please Enter a Proximity of Communication from the Property"><br>
+        <h2>II. Land Details</h2>
+        11) &nbsp;Area of land supported by documentary proof shape dimensions and physical features. <input type="text" name="Area_Property" id="Area_Property" placeholder="Eg. Plot Area - 852.70 Sq.mtr."><br>
+        12) &nbsp;Road or lanes on which land is abutting. <input type="text" name="Road_Property" id="Road_Property" placeholder="Eg. Hargovindas Sanitorium Lane, Off. M.V. Road"><br>
+        13) &nbsp;Is it free hold or lease land? <input type="text" name="Freehold_Prop" id="Freehold_Prop" placeholder="Please Enter a type of Property (Freehold/Lease)"><br>
+        14) &nbsp; If lease hold the name of the lessors / lessees, nature of lease, date of commencement and termination of lease and terms of renewal of lease. <input type="text" name="Lease_1" id="Lease_1" placeholder="Enter NA if not Applicable"><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a) Initial premium. <input type="text" name="Lease_2" id="Lease_2" placeholder="Please Enter NA if not Applicable"><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b) Ground rent payable annum. <input type="text" name="Lease_3" id="Lease_3" placeholder="Please Enter NA if not Applicable"><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c) Unearned increase payable to the lessor in the event sale to transfer. <input type="text" name="Lease_4" id="Lease_4" placeholder="Please Enter NA if not Applicable"><br>
+        15) &nbsp; If there are any restrictive covenant in regard to use of the land. If so, attach the copy of the covenant <input type="text" name="Restrictive_Prop" id="Restrictive_Prop"><br>
+        16) &nbsp; Is there any agreement of easement? If so attach the copies. <input type="text" name="Easement_Prop" id="Easement_Prop" placeholder="Please Enter NA if not Applicable"><br>
+        17) &nbsp; Does the land fall in area included in town planning or any development of the Govt. or any statutory body if so give particulars. <input type="text" name="Townplan_Prop" id="Townplan_Prop" placeholder="Within the limits of Municipal Corporation"><br>
+        18) &nbsp; Has the whole/ part of the land been notified for acquisition by Govt. or Statutory body. Give date for notification. <input type="text" name="Acquisition_Prop" id="Acquisition_Prop" placeholder="Enter Details not available if Don't have Details"><br>
+        19) &nbsp; Has any contribution been made towards development or is any contribution still outstanding. <input type="text" name="Contribution_Prop" id="Contribution_Prop" placeholder="Enter Details not available if Don't have Details"><br>
+        20) &nbsp; Attach a dimensional site plan : <input type="text" name="Dimensional_Prop" id="Dimensional_Prop" value="Copy of Typical Floor Plan provided is Sales Deed"><br>
+        <h2>III. Improvement Details</h2>
+        21) &nbsp; Attach plans and elevations of all structures standing on the land or layout plan. <input type="text" name="Elevation_Prop" id="Elevation_Prop" value="Copy of Typical Floor Plan provided is Sales Deed"><br>
+        22) &nbsp; Furnish technical details of the building on the separate sheets.  <input value="Refer Annexure - I for technical details" name="Annexure_1"><br>
+        23) &nbsp; a) Is the Premises owner occupied, tenant, or both <input type="text" name="Premises_Prop" id="Premises_Prop"><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b)If partly occupied, specify portion and extent of area under Owner occupation. <input type="text" name="Premises_Prop_1" id="Premises_Prop_1"><br>
+        24) &nbsp; What is F.S.I permissible & percentage actually utilized? <input type="text" name="FSI_Prop" id="FSI_Prop" value="As per prevailing DC Rules"><br>
+        <h2>IV. Sales / Rates</h2>
+        25) &nbsp; Give instances of sale of immovable property in the locality on a separate sheet, incl. the name & address of the property, registration no, sale price & area land sold. <input type="text" name="Sale_Price" id="Sale_Price" placeholder="Eg. Adopted Rs. 23,000/- per Sq.ft BUA."><br>
+        26) &nbsp; Purchase Details <input type="text" name="Purchase_Prop" id="Purchase_Prop" placeholder="Eg. Agreement for Sale between Mrs. Sonabai Krashnasa Kathare & Mr. Ramesh Krashnasa Kathare (Purchaser) & Mrs. Gangabai Tokersey (Original Owner) dt.26.12.1991 For Rs.8,84,325/-"><br>
+        27) &nbsp; Composite Rate adopted in this valuation. <input type="text" name="Composite_Prop" id="Composite_Prop" placeholder="Eg. Rs. 23,000 /- Per Sq.ft. BUA"><br>
+        28) &nbsp; If sale instances are not available or relied upon, the basis of arriving at the Ready Construction rate. <input type="text" name="Instances_Prop" id="Instances_Prop" placeholder="Eg. Market Intelligence, local brokers"><br>
+        <h2>V. Cost of Construction</h2>
+        29) &nbsp; Year of commencement of construction and year completion <input type="text" name="COC_1" id="COC_1" placeholder="Eg. Year 1989-91"><br>
+        30) &nbsp; What was the method of construction by contract/by employing labour direct/by both. <input type="text" name="COC_2" id="COC_2" placeholder="Eg. RCC framed structure"><br>
+        31) &nbsp; For items of work done contract, produce copies of agreement. <input type="text" name="COC_3" id="COC_3" value="Details not available"><br>
+        32) &nbsp; For items of work done by engaging labor directly, give basic rates of materials & labor supported by documentary proof. <input type="text" name="COC_4" id="COC_4" value="Details not available"><br>
       <h2>2. Property Ratings</h2>
       <h3> Please Select Property Rating on scale of 1 to 5.</h3>
         a) &nbsp;Locality :

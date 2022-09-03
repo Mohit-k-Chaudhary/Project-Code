@@ -132,7 +132,7 @@ function moneyFormatIndia($num) {
             <h4>of</h4>
             <br><h3><?php echo $owner_name ?></h3>
             <br><h4>Located at</h4>
-            <h2><?php echo $_POST["Address"]?></h2>
+            <h2><?php echo $_POST["Location_Prop"]?></h2>
             <img src="First-Img.png" alt="Valuation">
             <br>
             <h2><?php echo date('F Y') ?> </h2><br><br>
@@ -157,175 +157,247 @@ function moneyFormatIndia($num) {
         AREA OFFICE : <?php echo $_POST["area-office"]; ?> </td>
     </tr>
     <tr>
-        <td style="width:5%"><p>&nbsp;</p></td>
+        <td style="width:5%"><p><b>I<b></p></td>
+        <td colspan="3"><b> General<b> </td>
+    </tr>
+    <tr>
+        <td style="width:5%"><p>1.</p></td>
         <td style="width:45%"> Name of the Valuer: </td>
         <td style="width:5%">:</td>
         <td style="width:45%"> <?php echo $_POST["name"]; ?></td>        
     </tr>
     <tr>
-        <td style="width:5%"><p>&nbsp;</p></td>
+        <td style="width:5%"><p>2.</p></td>
         <td style="width:45%"> Date of Inspection: </td>
         <td style="width:5%">:</td>
         <td style="width:45%"> <?php echo $_POST["date"]; ?></td>        
     </tr>
     <tr>
-        <td colspan="4"> VALUATION FOR COMPLETED BUILDING SCHEME : <?php echo $_POST["Drop-1"]; ?>
-    </tr>
-    <tr>
-        <td colspan="4"> <h3>1. Property Details </h3>
-        Property Details such as Name of owner Location etc.
-        </td>
-    </tr>
-    <tr>
-        <td style="width:5%"><p>a)</p></td>
-        <td style="width:45%"> Name of the Applicant/Intended Buyer: </td>
-        <td style="width:5%">:</td>
-        <td style="width:45%"> <?php echo $_POST["pr-name"]; ?></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p></p></td>
+        <td style="width:5%"><p>3</p></td>
         <td style="width:45%"> Name of the Owner: </td>
         <td style="width:5%">:</td>
         <td style="width:45%"> <?php echo $_POST["own-name"]; ?></td>        
     </tr>
     <tr>
-        <td style="width:5%"><p>b)</p></td>
-        <td style="width:45%"> Document perused: </td>
-        <td style="width:5%"></td>
-        <td style="width:45%"></td>        
+        <td style="width:5%"><p>4</p></td>
+        <td style="width:45%"> If the property is under joint ownership/ co ownership, share of each owner. Is the share undivided. </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"> <?php echo $_POST["ownership"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>5</p></td>
+        <td style="width:45%"> Brief description of the property</td>
+        <td style="width:5%"><p>:</p></td>
+        <td style="width:45%"><?php echo $_POST["Brief_Prop"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>6</p></td>
+        <td style="width:45%"> Location, Street, ward no. </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["Location_Prop"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>7</p></td>
+        <td style="width:45%"> Survey /Plot no of the land. </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["Survey_Prop"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>8</p></td>
+        <td style="width:45%"> Is the property situated in residential / commercial / Industrial/ shopping premise? </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["Situated_prop"]; ?></td>        
+    </tr>
+    <tr>
+        <td style="width:5%"><p>9</p></td>
+        <td style="width:45%"> Classification of the locality-high class/ middle class/ poor class </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["Locality_Prop"]; ?></td>       
+    </tr>
+    <tr>
+        <td style="width:5%"><p>10</p></td>
+        <td style="width:45%"> Proximity to civic amenities like schools, offices, hospital, market, cinema etc. </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["Proximity_Civil_Prop"]; ?></td>       
+    </tr>
+    <tr>
+        <td style="width:5%"><p>11</p></td>
+        <td style="width:45%"> Means and proximity to surface communication by which the locality is served. </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["Proximity_Communication_Prop"]; ?></td>       
+    </tr>
+    <tr>
+        <td style="width:5%"><p><b>II<b></p></td>
+        <td colspan="3"><b> Land Details<b></td>
+    </tr>
+    <tr>
+        <td style="width:5%"><p>12</p></td>
+        <td style="width:45%"> Area of land supported by documentary proof shape dimensions and physical features. </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["Area_Property"]; ?></td>       
+    </tr>
+    <tr>
+        <td style="width:5%"><p>13</p></td>
+        <td style="width:45%"> Road or lanes on which land is abutting. </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["Road_Property"]; ?></td>       
+    </tr>
+    <tr>
+        <td style="width:5%"><p>14</p></td>
+        <td style="width:45%"> Is it free hold or lease land? </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["Freehold_Prop"]; ?></td>       
+    </tr>
+    <tr>
+        <td style="width:5%"><p>15</p></td>
+        <td style="width:45%"> If lease hold the name of the lessors / lessees, nature of lease, date of commencement and termination of lease and terms of renewal of lease. </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["Lease_1"]; ?></td>       
     </tr>
     <tr>
         <td style="width:5%"><p></p></td>
-        <td style="width:45%"> i) Index-II No : </td>
+        <td style="width:45%"> a) Initial premium. </td>
         <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["In-No"]; ?></td>        
+        <td style="width:45%"><?php echo $_POST["Lease_2"]; ?></td>       
     </tr>
     <tr>
         <td style="width:5%"><p></p></td>
-        <td style="width:45%"> ii) Plan/ Commencement Certificate No.: </td>
+        <td style="width:45%"> b) Ground rent payable annum. </td>
         <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["Com-Cer-no"]; ?></td>        
+        <td style="width:45%"><?php echo $_POST["Lease_3"]; ?></td>       
     </tr>
     <tr>
         <td style="width:5%"><p></p></td>
-        <td style="width:45%"> iii) Completion Certificate : </td>
+        <td style="width:45%"> c) Unearned increase payable to the lessor in the event sale to transfer. </td>
         <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["Com-Cer"]; ?></td>        
+        <td style="width:45%"><?php echo $_POST["Lease_4"]; ?></td>       
+    </tr>
+    <tr>
+        <td style="width:5%"><p>16</p></td>
+        <td style="width:45%"> If there are any restrictive covenant in regard to use of the land. If so, attach the copy of the covenant </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["Restrictive_Prop"]; ?></td>       
+    </tr>
+    <tr>
+        <td style="width:5%"><p>17</p></td>
+        <td style="width:45%"> Is there any agreement of easement? If so attach the copies. </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["Easement_Prop"]; ?></td>       
+    </tr>
+    <tr>
+        <td style="width:5%"><p>18</p></td>
+        <td style="width:45%"> Does the land fall in area included in town planning or any development of the Govt. or any statutory body if so give particulars. </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["Townplan_Prop"]; ?></td>       
+    </tr>
+    <tr>
+        <td style="width:5%"><p>19</p></td>
+        <td style="width:45%"> Has the whole/ part of the land been notified for acquisition by Govt. or Statutory body. Give date for notification. </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["Acquisition_Prop"]; ?></td>       
+    </tr>
+    <tr>
+        <td style="width:5%"><p>20</p></td>
+        <td style="width:45%"> Has any contribution been made towards development or is any contribution still outstanding. </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["Contribution_Prop"]; ?></td>       
+    </tr>
+    <tr>
+        <td style="width:5%"><p>21</p></td>
+        <td style="width:45%"> Attach a dimensional site plan : </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["Dimensional_Prop"]; ?></td>       
+    </tr>
+    <tr>
+        <td style="width:5%"><p><b>III<b></p></td>
+        <td colspan="3"><b> Improvement Details<b></td>
+    </tr>
+    <tr>
+    <tr>
+        <td style="width:5%"><p>22</p></td>
+        <td style="width:45%"> Attach plans and elevations of all structures standing on the land or layout plan. </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["Elevation_Prop"]; ?></td>       
+    </tr>
+    <tr>
+        <td style="width:5%"><p>23</p></td>
+        <td style="width:45%"> Furnish technical details of the building on the separate sheets. </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["Annexure_1"]; ?></td>    
+    </tr>
+    <tr>
+        <td style="width:5%"><p>24</p></td>
+        <td style="width:45%"> a) Is the Premises owner occupied, tenant, or both </td>
+        <td style="width:5%">:</td>
+        <td style="width:45%"><?php echo $_POST["Premises_Prop"]; ?></td>       
     </tr>
     <tr>
         <td style="width:5%"><p></p></td>
-        <td style="width:45%"> iv) Agreement : </td>
+        <td style="width:45%"> b)If partly occupied, specify portion and extent of area under Owner occupation. </td>
         <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["aggrement"]; ?></td>        
+        <td style="width:45%"><?php echo $_POST["Premises_Prop_1"]; ?></td>       
     </tr>
     <tr>
-        <td style="width:5%"><p>c)</p></td>
-        <td style="width:45%"> Location of the Property </td>
-        <td style="width:5%"></td>
-        <td style="width:45%"></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p></p></td>
-        <td style="width:45%"> Address of the Property : </td>
+        <td style="width:5%"><p>25</p></td>
+        <td style="width:45%"> What is F.S.I permissible & percentage actually utilized? </td>
         <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["Address"]; ?></td>        
+        <td style="width:45%"><?php echo $_POST["FSI_Prop"]; ?></td>       
     </tr>
     <tr>
-        <td style="width:5%"><p></p></td>
-        <td style="width:45%"> Plot No. /S.F. No./T.S.No. /R.S.No. : </td>
+        <td style="width:5%"><p><b>IV<b></p></td>
+        <td colspan="3"><b> Sales / Rates<b></td>
+    </tr>
+    <tr>
+        <td style="width:5%"><p>26</p></td>
+        <td style="width:45%"> Give instances of sale of immovable property in the locality on a separate sheet, incl. the name & address of the property, registration no, sale price & area land sold. </td>
         <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["plot-no"]; ?></td>        
+        <td style="width:45%"><?php echo $_POST["Sale_Price"]; ?></td>       
     </tr>
     <tr>
-        <td style="width:5%"><p></p></td>
-        <td style="width:45%"> Village/Block No./Taluk/Ward No. : </td>
+        <td style="width:5%"><p>27</p></td>
+        <td style="width:45%"> Purchase Details </td>
         <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["Taluka"]; ?></td>        
+        <td style="width:45%"><?php echo $_POST["Purchase_Prop"]; ?></td>       
     </tr>
     <tr>
-        <td style="width:5%"><p></p></td>
-        <td style="width:45%"> District/Corporation/Municipality : </td>
+        <td style="width:5%"><p>28</p></td>
+        <td style="width:45%"> Composite Rate adopted in this valuation. </td>
         <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["District"]; ?></td>        
+        <td style="width:45%"><?php echo $_POST["Composite_Prop"]; ?></td>       
     </tr>
     <tr>
-        <td style="width:5%"><p>d)</p></td>
-        <td style="width:45%"> Boundaries and Dimensions </td>
-        <td style="width:5%"></td>
-        <td style="width:45%"></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p></p></td>
-        <td style="width:45%"> North/Front : </td>
+        <td style="width:5%"><p>29</p></td>
+        <td style="width:45%"> If sale instances are not available or relied upon, the basis of arriving at the Ready Construction rate. </td>
         <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["North/Front"]; ?></td>        
+        <td style="width:45%"><?php echo $_POST["Instances_Prop"]; ?></td>       
     </tr>
     <tr>
-        <td style="width:5%"><p></p></td>
-        <td style="width:45%"> South/Rear : </td>
+        <td style="width:5%"><p>30</p></td>
+        <td style="width:45%"> Year of commencement of construction and year completion </td>
         <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["South/Rear"]; ?></td>        
+        <td style="width:45%"><?php echo $_POST["COC_1"]; ?></td>       
     </tr>
     <tr>
-        <td style="width:5%"><p></p></td>
-        <td style="width:45%"> East/Left (side 1) : </td>
+        <td style="width:5%"><p>31</p></td>
+        <td style="width:45%"> What was the method of construction by contract/by employing labour direct/by both. </td>
         <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["side-1"]; ?></td>        
+        <td style="width:45%"><?php echo $_POST["COC_2"]; ?></td>       
     </tr>
     <tr>
-        <td style="width:5%"><p></p></td>
-        <td style="width:45%"> West/Right (side2) : </td>
+        <td style="width:5%"><p>32</p></td>
+        <td style="width:45%"> For items of work done contract, produce copies of agreement. </td>
         <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["side-2"]; ?></td>        
+        <td style="width:45%"><?php echo $_POST["COC_3"]; ?></td>       
     </tr>
     <tr>
-        <td style="width:5%"><p></p></td>
-        <td style="width:45%"> Extent : </td>
+        <td style="width:5%"><p>33</p></td>
+        <td style="width:45%"> For items of work done by engaging labor directly, give basic rates of materials & labor supported by documentary proof. </td>
         <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["extent"]; ?></td>        
+        <td style="width:45%"><?php echo $_POST["COC_4"]; ?></td>       
     </tr>
-    <tr>
-        <td style="width:5%"><p>e)</p></td>
-        <td style="width:45%"> Type of the property </td>
-        <td style="width:5%"></td>
-        <td style="width:45%"></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p></p></td>
-        <td style="width:45%"> Flat/Bungalow/Row House/Duplex : </td>
-        <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["type-property"]; ?></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p>f)</p></td>
-        <td style="width:45%"> Occupant </td>
-        <td style="width:5%"></td>
-        <td style="width:45%"></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p>g)</p></td>
-        <td style="width:45%"> Usage of the Building </td>
-        <td style="width:5%"></td>
-        <td style="width:45%"></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p></p></td>
-        <td style="width:45%"> Residential / partly commercial / fully commercial (Explain ratio of each type) : </td>
-        <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["Usage_Build"]; ?></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p>h)</p></td>
-        <td style="width:45%"> Details of the Nearby Landmark : </td>
-        <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["landmark"]; ?></td>        
-    </tr>
-    <tr>
-        <td style="width:5%"><p>i)</p></td>
-        <td style="width:45%"> Development of surrounding area with Lower class/ Middle/ Upper Middle/Posh : </td>
-        <td style="width:5%">:</td>
-        <td style="width:45%"><?php echo $_POST["area-with"]; ?></td>        
-    </tr>
+    </table>
+    <br><br><br>
+    <table>
     <tr>
         <td colspan="4"> <h3>2. Valuation Details </h3></td>
     </tr>
@@ -371,7 +443,7 @@ function moneyFormatIndia($num) {
     <tr>
         <td colspan="4">
             This is to certify that,<br><br><br><br><br>
-            The Fair Market Value of the Immovable Asset of <?php echo $owner_name ?>, located at <?php echo $_POST["Address"]; ?>, is <?php echo $valuation." &#x20b9"; ?> as per our appraisal & Analysis.
+            The Fair Market Value of the Immovable Asset of <?php echo $owner_name ?>, located at <?php echo $_POST["Location_Prop"]; ?>, is <?php echo $valuation." &#x20b9"; ?> as per our appraisal & Analysis.
         </td>
     </tr>
     <tr>
